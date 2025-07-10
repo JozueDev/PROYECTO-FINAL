@@ -12,5 +12,6 @@ venv.bak/
 /data/processed
 /data/raw
 /heart_attack.db
+/models
 
 
