@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # Cargar el modelo
-model = load(open("../data/raw/model_LGBMClassifier_Heart_Atack.sav", "rb"))
+model = load(open("../models/model_LGBMClassifier_Heart_Atack.sav", "rb"))
 class_dict = {
     "0": "Bajo Riesgo ❤️",
     "1": "Alto Riesgo ⚠️"
