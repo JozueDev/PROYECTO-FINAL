@@ -126,19 +126,39 @@ with col2:
 
 # Organización en columnas
 with st.container():
+    st.markdown("""
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .section2 {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background-color: #f5f5f5;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-bottom: 2rem;
+            }
+            
+            .icon i {
+                font-size: 24px;
+                color: #941411; /* Color de Google */
+            }
+            
+            .section h4 {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                font-weight: 600;
+            }
+        </style>
+        </head>
+        <body>
+        <div class="section2">
+            <a href="#" class="icon"><i class="fa-solid fa-clipboard"></i></a>
+            <h4 style="color:#941411">Datos Personales</h4>
+        </div>
+        """, unsafe_allow_html=True)
 
-    col1, mid, col2 = st.columns([7,0.1,89.9])
-    with col1:
-        st.image('./images/datos_personales.png', width=80)
-    with mid:
-        st.markdown(
-            """<div style="height: 100%; border-left: 2px solid white;"></div>""",
-            unsafe_allow_html=True
-        )
-    with col2:
-        st.title('Datos Personales')
-
-    #st.markdown("<div class='section'><h4 style='color:#941411'><img src='{icon}' alt='icon'></img>Datos Personales</h4></div>", unsafe_allow_html=True)
     val1 = st.slider("**Edad**", min_value=20, max_value=100, step=1, value=0, help="Edad en años")
     val2 = st.selectbox("**Género**", ["Femenino", "Masculino"], format_func=lambda x: x, index=0)
     val2 = 0 if val2 == "Femenino" else 1
@@ -146,17 +166,41 @@ with st.container():
     val3 = 0 if val3 == "Urbana" else 1
     val4 = st.selectbox("**Nivel de ingresos**", ["Bajo", "Medio", "Alto"], index=1)
     val4 = ["Bajo", "Medio", "Alto"].index(val4)
-    col1, mid, col2 = st.columns([7,0.1,89.9])
-    with col1:
-        st.image('./images/historial_clinico.png', width=80)
-    with mid:
-        st.markdown(
-            """<div style="height: 100%; border-left: 2px solid white;"></div>""",
-            unsafe_allow_html=True
-        )
-    with col2:
-        st.title('Indicadores Clínicos')
-    #st.markdown("<div class='section'><h4 style='color:#941411'>🩺 Indicadores Clínicos</h4></div>", unsafe_allow_html=True)
+    
+    st.markdown("""
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .section2 {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background-color: #f5f5f5;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-bottom: 2rem;
+                margin-top: 2rem
+            }
+            
+            .icon i {
+                font-size: 24px;
+                color: #941411; /* Color de Google */
+            }
+            
+            .section h4 {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                font-weight: 600;
+            }
+        </style>
+        </head>
+        <body>
+        <div class="section2">
+            <a href="#" class="icon"><i class="fa-solid fa-hospital"></i></a>
+            <h4 style="color:#941411">Indicadores Clínicos</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
     val7 = st.slider("**Colesterol total (mg/dL)**", min_value=50, max_value=300, step=1, value=50)
     val18 = st.slider("**Presión arterial sistólica (mmHg)**", min_value=100, max_value=180, step=5, value=100)
     val19 = st.slider("**Presión arterial diastólica (mmHg)**", min_value=60, max_value=100, step=5, value=60)
@@ -166,17 +210,41 @@ with st.container():
     val23 = st.slider("**Triglicéridos (mg/dL)**", min_value=100, max_value=300, step=1, value=100)
     val24 = st.selectbox("**Resultados EKG**", ["Normal", "Anormal"], index=0)
     val24 = 0 if val24 == "Normal" else 1
-    col1, mid, col2 = st.columns([7,0.1,89.9])
-    with col1:
-        st.image('./images/historial_medico.png', width=80)
-    with mid:
-        st.markdown(
-            """<div style="height: 100%; border-left: 2px solid white;"></div>""",
-            unsafe_allow_html=True
-        )
-    with col2:
-        st.title('Historial Médico')
-    #st.markdown("<div class='section'><h4 style='color:#941411'>🏥 Historial Médico</h4></div>", unsafe_allow_html=True)
+    
+    st.markdown("""
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .section2 {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background-color: #f5f5f5;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-bottom: 2rem;
+                margin-top: 2rem
+            }
+            
+            .icon i {
+                font-size: 24px;
+                color: #941411; /* Color de Google */
+            }
+            
+            .section h4 {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                font-weight: 600;
+            }
+        </style>
+        </head>
+        <body>
+        <div class="section2">
+            <a href="#" class="icon"><i class="fa-solid fa-heart-pulse"></i></a>
+            <h4 style="color:#941411">Historial Médico</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
     val5 = st.checkbox("Hipertensión", value=False)
     val5 = 1 if val5 else 0
     val6 = st.checkbox("Diabetes", value=False)
@@ -189,17 +257,41 @@ with st.container():
     val26 = 1 if val26 else 0
     val27 = st.checkbox("Participó en campaña de detección", value=False)
     val27 = 1 if val27 else 0
-    col1, mid, col2 = st.columns([7,0.1,89.9])
-    with col1:
-        st.image('./images/estilo_vida.png', width=80)
-    with mid:
-        st.markdown(
-            """<div style="height: 100%; border-left: 2px solid white;"></div>""",
-            unsafe_allow_html=True
-        )
-    with col2:
-        st.title('Estilo de Vida')
-    #st.markdown("<div class='section'><h4 style='color:#941411'>🚬 Estilo de Vida</h4></div>", unsafe_allow_html=True)
+    
+    st.markdown("""
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .section2 {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background-color: #f5f5f5;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-bottom: 2rem;
+                margin-top: 2rem
+            }
+            
+            .icon i {
+                font-size: 24px;
+                color: #941411; /* Color de Google */
+            }
+            
+            .section h4 {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                font-weight: 600;
+            }
+        </style>
+        </head>
+        <body>
+        <div class="section2">
+            <a href="#" class="icon"><i class="fa-solid fa-smoking"></i></a>
+            <h4 style="color:#941411">Estilo de Vida</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
     val11 = st.radio("**Consumo de tabaco**", ["Nunca", "Ex-fumador", "Actualmente"], horizontal=True)
     val11 = ["Nunca", "Ex-fumador", "Actualmente"].index(val11)
     val12 = st.radio("**Consumo de alcohol**", ["Nunca", "Moderado", "Alto"], horizontal=True)
