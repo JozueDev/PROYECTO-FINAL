@@ -61,6 +61,7 @@ st.markdown("""
         border-radius: 10px;
         margin-bottom: 1.5rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 180px;  
     }
     
     .section {
@@ -111,13 +112,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Encabezado con logo
-col1, col2 = st.columns([1, 4])
+col1, col2 = st.columns([0.5, 4.5])
 # Verifica si la imagen existe
 
 with col1:
     image_path = "./images/app_imagen.png"
     if os.path.exists(image_path):
-        st.image(image_path, width=130)
+        st.image(image_path, use_container_width=True)
     else:
         st.error(f"No se encontró la imagen en {image_path}")
 with col2:
