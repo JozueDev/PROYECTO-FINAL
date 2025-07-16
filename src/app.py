@@ -351,6 +351,11 @@ if predict_btn:
             
         st.markdown("</div>", unsafe_allow_html=True)
         
+        st.markdown("""
+        image = Image.open("./images/plot_shap.png")  # Por ejemplo: "shap_plot.png"
+        st.image(image, caption="Gráfico SHAP: impacto de cada variable", use_column_width=True)
+        """, unsafe_allow_html=True)
+        
         # Nota legal
         st.markdown("""
         <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">

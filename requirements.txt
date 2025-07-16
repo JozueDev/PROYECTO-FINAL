@@ -7,3 +7,4 @@ lightgbm
 streamlit
 xgboost
 imbalanced-learn
+shap
