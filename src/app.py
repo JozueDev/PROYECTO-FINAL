@@ -253,6 +253,8 @@ with st.container():
     val6 = 1 if val6 else 0
     val8 = st.checkbox("Obesidad", value=False)
     val8 = 1 if val8 else 0
+    val10 = st.checkbox("Historia familiar de enfermedades cardíacas", value=False)
+    val10 = 1 if val10 else 0
     val25 = st.checkbox("Enfermedad cardíaca previa", value=False)
     val25 = 1 if val25 else 0
     val26 = st.checkbox("Medicación cardiovascular", value=False)
@@ -303,8 +305,6 @@ with st.container():
     val14 = st.radio("**Hábitos alimentarios**", ["Poco saludables", "Saludables"], horizontal=True)
     val14 = 0 if val14 == "Poco saludables" else 1
     val9 = st.slider("**Circunferencia abdominal (cm)**", min_value=50, max_value=150, step=1, value=50)
-    val10 = st.checkbox("Historia familiar de enfermedades cardíacas", value=False)
-    val10 = 1 if val10 else 0
     val16 = st.select_slider("**Nivel de estrés**", options=["Bajo", "Moderado", "Alto"])
     val16 = ["Bajo", "Moderado", "Alto"].index(val16)
     val17 = st.slider("**Horas de sueño diarias**", min_value=4, max_value=10, step=1, value=4)
