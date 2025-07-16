@@ -4,6 +4,7 @@ import base64
 from PIL import Image
 import os
 
+
 # Configuración de página
 st.set_page_config(
     page_title="RedPulse AI",
@@ -351,9 +352,15 @@ if predict_btn:
             
         st.markdown("</div>", unsafe_allow_html=True)
         
-    # Cargar y mostrar la imagen SHAP
-    image = Image.open("./images/plot_shap.png")
-    st.image(image, caption="Gráfico SHAP: impacto de cada variable", use_container_width=True)
+    image = Image.open("./images/shap_summary_plot.png")
+
+    # Redimensionar a 400 px de ancho manteniendo proporción
+    base_width = 400
+    w_percent = (base_width / float(image.size[0]))
+    h_size = int((float(image.size[1]) * float(w_percent)))
+    image_resized = image.resize((base_width, h_size))
+
+    st.image(image_resized, caption="Gráfico SHAP: impacto de cada variable")
 
     # Nota legal (solo una vez)
     st.markdown("""
