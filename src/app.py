@@ -351,21 +351,20 @@ if predict_btn:
             
         st.markdown("</div>", unsafe_allow_html=True)
         
-        st.markdown("""
-        image = Image.open("./images/plot_shap.png")  # Por ejemplo: "shap_plot.png"
-        st.image(image, caption="Gráfico SHAP: impacto de cada variable", use_column_width=True)
-        """, unsafe_allow_html=True)
-        
-        # Nota legal
-        st.markdown("""
-        <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
-        <i>Esta herramienta no sustituye una evaluación médica profesional. Los resultados son meramente indicativos.</i>
-        </div>
-        """, unsafe_allow_html=True)
+    # Cargar y mostrar la imagen SHAP
+    image = Image.open("./images/plot_shap.png")
+    st.image(image, caption="Gráfico SHAP: impacto de cada variable", use_container_width=True)
 
-# Nota al pie
-st.markdown("""
-<div style="text-align: center; margin-top: 3rem; color: #666;">
-<p>© 2025 RedPulse AI - Sistema de Inteligencia Artificial para Salud Cardiovascular</p>
-</div>
-""", unsafe_allow_html=True)
+    # Nota legal (solo una vez)
+    st.markdown("""
+    <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
+    <i>Esta herramienta no sustituye una evaluación médica profesional. Los resultados son meramente indicativos.</i>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Nota al pie
+    st.markdown("""
+    <div style="text-align: center; margin-top: 3rem; color: #666;">
+    <p>© 2025 RedPulse AI - Sistema de Inteligencia Artificial para Salud Cardiovascular</p>
+    </div>
+    """, unsafe_allow_html=True)
