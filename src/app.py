@@ -4,6 +4,50 @@ import base64
 from PIL import Image
 import os
 
+# Obtener el modelo desde drive
+import requests
+import os
+import joblib
+
+def download_model_from_drive(file_id, destination):
+    if os.path.exists(destination):
+        print("Modelo ya descargado.")
+        return
+
+    print("Descargando modelo desde Google Drive...")
+    URL = "https://drive.google.com/uc?export=download"
+
+    session = requests.Session()
+    response = session.get(URL, params={'id': file_id}, stream=True)
+
+    # Manejo de cookies de advertencia de descarga
+    def get_confirm_token(response):
+        for key, value in response.cookies.items():
+            if key.startswith('download_warning'):
+                return value
+        return None
+
+    token = get_confirm_token(response)
+
+    if token:
+        params = {'id': file_id, 'confirm': token}
+        response = session.get(URL, params=params, stream=True)
+
+    with open(destination, "wb") as f:
+        for chunk in response.iter_content(32768):
+            if chunk:
+                f.write(chunk)
+
+    print("Descarga completada.")
+
+FILE_ID = "1oFYh3NeR9Pd8HZSpOSYOiw0PzM674m0T"
+DEST = "model_LGBMClassifier_Heart_Atack_App.sav"
+
+download_model_from_drive(FILE_ID, DEST)
+
+download_model_from_drive(FILE_ID, "model_LGBMClassifier_Heart_Atack_App.sav")
+model = joblib.load("model_LGBMClassifier_Heart_Atack_App.sav")
+
 
 # Configuración de página
 st.set_page_config(
